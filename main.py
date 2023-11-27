@@ -8,3 +8,6 @@ import pandas as pd
 df = pd.read_csv('C:\Data\website_data.csv')  # Укажите здесь путь к вашему файлу
 
 # Создание экземпляра приложения
+app = dash.Dash(__name__)
+
+# Определение структуры дашборда
