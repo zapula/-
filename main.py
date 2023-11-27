@@ -28,3 +28,15 @@ app.layout = html.Div([
 ], style={'padding': '20px'})
 
 # Определение логики дашборда
+@app.callback(
+    Output('line-chart', 'figure'),
+    Output('histogram', 'figure'),
+    Output('pie-chart', 'figure'),
+    Output('box-plot', 'figure'),
+    Output('scatter-plot', 'figure'),
+    [Input('dropdown', 'value')]
+)
+def update_charts(selected_date):
+    filtered_df = df[df['Дата'] == selected_date]
+
+    # Линейный график для просмотров товаров
