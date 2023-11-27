@@ -39,4 +39,19 @@ app.layout = html.Div([
 def update_charts(selected_date):
     filtered_df = df[df['Дата'] == selected_date]
 
-    # Линейный график для просмотров товаров
+    # Линейный график
+    line_chart = px.line(filtered_df, x='Время', y='Просмотры товаров', title='Просмотры товаров по времени')
+
+    # Гистограмма
+    histogram = px.histogram(df, x='Время на сайте', title='Распределение времени на сайте')
+
+    # Круговая диаграмма
+    pie_chart = px.pie(df, names='Браузер', title='Использование браузеров')
+
+    # Ящик
+    box_plot = px.box(df, y='Возраст', title='Возрастные группы пользователей')
+
+    # Точечный график
+    scatter_plot = px.scatter(df, x='Возраст', y='Покупки', color='Пол', title='Возраст и покупки')
+
+    return line_chart, histogram, pie_chart, box_plot, scatter_plot
