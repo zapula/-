@@ -55,3 +55,7 @@ def update_charts(selected_date):
     scatter_plot = px.scatter(df, x='Возраст', y='Покупки', color='Пол', title='Возраст и покупки')
 
     return line_chart, histogram, pie_chart, box_plot, scatter_plot
+
+# Запуск приложения
+if __name__ == '__main__':
+    app.run_server(debug=True)
