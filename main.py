@@ -5,3 +5,6 @@ import plotly.express as px
 import pandas as pd
 
 # Загрузка данных из csv файла
+df = pd.read_csv('C:\Data\website_data.csv')  # Укажите здесь путь к вашему файлу
+
+# Создание экземпляра приложения
